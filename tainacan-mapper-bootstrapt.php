@@ -1,11 +1,11 @@
 <?php
 /*
-Plugin Name: Tainacan INBCM
+Plugin Name: Tainacan DWC
 Plugin URI: https://tainacan.org/
-Description: Plugin for tainacan mappers IBRAM INBCM
-Author: Vinícius Nunes
+Description: Plugin for tainacan mappers Darwin Core
+Author: Steve Dogiakos
 Version: 0.0.1
-Text Domain: tainacan-mappers-ibram-inbcm
+Text Domain: tainacan-mappers-tmdc-dwc
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 */
@@ -21,8 +21,8 @@ class TainacanINBCMBootstrapt {
 	}
 
 	function registerExposerMapper($exposers) {
-		$exposers->register_mapper('INBCM\Preset\Tainacan\Classes\Mapper\MapperINBCM');
+		$exposers->register_mapper('INBCM\Preset\Tainacan\Classes\Mapper\MapperDWC');
 	}
 }
 
-$tainacanMapperBootstrapt = new \INBCM\Preset\Tainacan\TainacanINBCMBootstrapt();
+$tainacanMapperBootstrapt = new \INBCM\Preset\Tainacan\TainacanDWCBootstrapt();
