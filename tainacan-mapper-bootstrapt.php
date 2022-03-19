@@ -21,8 +21,8 @@ class TainacanINBCMBootstrapt {
 	}
 
 	function registerExposerMapper($exposers) {
-		$exposers->register_mapper('INBCM\Preset\Tainacan\Classes\Mapper\MapperDWC');
+		$exposers->register_mapper('dwc\Preset\Tainacan\Classes\Mapper\MapperDWC');
 	}
 }
 
-$tainacanMapperBootstrapt = new \INBCM\Preset\Tainacan\TainacanDWCBootstrapt();
+$tainacanMapperBootstrapt = new \dwc\Preset\Tainacan\TainacanDWCBootstrapt();

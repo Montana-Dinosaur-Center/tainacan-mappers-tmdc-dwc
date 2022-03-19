@@ -1,6 +1,6 @@
 <?php
 
-namespace INBCM\Preset\Tainacan\Classes\Controller;
+namespace DWC\Preset\Tainacan\Classes\Controller;
 
 class Preset {
 
@@ -39,7 +39,7 @@ class Preset {
 		return false;
 	}
 
-	public function published_collection($collection, $data_preset) 
+	public function published_collection($collection, $data_preset)
 	{
 		$data_collection = $data_preset['collection'];
 		$collection->set_status($data_collection['status']);
@@ -135,11 +135,11 @@ class Preset {
 		$tax->set_description($taxonomy['description']);
 		$tax->set_allow_insert($taxonomy['allow_insert']);
 		$tax->set_status($taxonomy['status']);
-		
+
 		if ($tax->validate()) {
 			$tax = $this->taxonomy_repository->insert($tax);
 			$tax_db_identifier = $tax->get_db_identifier();
-			
+
 			$position = 0;
 			$last_term = 0;
 			$parent = array();
@@ -154,7 +154,7 @@ class Preset {
 						$position++;
 						array_push($parent, $last_term);
 					}
- 
+
 					while( $position > 0 && !($values[$position] != '' && $values[$position-1] == '' )) // back degree
 					{
 						$position--;
@@ -173,7 +173,7 @@ class Preset {
 					if(end($parent)) $term->set_parent(end($parent));
 
 					$term_exist = $this->term_repository->term_exists($term->get_name(), $tax, $term->get_parent(), true);
-					
+
 					if($term_exist === false)
 					{
 						if ($term->validate())
@@ -190,7 +190,7 @@ class Preset {
 					{
 						$last_term = $term_exist->term_id;
 					}
-					
+
 				}
 			}
 			return $tax;

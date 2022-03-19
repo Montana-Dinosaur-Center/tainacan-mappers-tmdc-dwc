@@ -1,5 +1,5 @@
 <?php
-
+//brasillian states, brasilion cities, get the city metadata file cidades.json and then estados.json
 add_action( 'init', function() {
     global $cidades_brasileiras, $estados_brasileiros;
     $cidades = file_get_contents( plugin_dir_url(__FILE__) . 'metadata_type/cidades.json' );
